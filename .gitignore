@@ -167,4 +167,5 @@ Temporary Items
 .apdisk
 
 ### user add
-dist/
+dist/*
+!.gitkeep
