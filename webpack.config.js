@@ -46,7 +46,6 @@ module.exports = {
     },
   },
   devtool: 'inline-source-map',
-  watch: true,
   plugins: [
     new CopyPlugin([
       {from: './src/assets', to: './assets' }

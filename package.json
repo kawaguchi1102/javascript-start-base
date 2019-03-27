@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --mode development --watch"
   },
   "repository": {"url": "git@github.com:kawaguchi1102/javascript-start-base.git"},
   "keywords": [],
