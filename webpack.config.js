@@ -15,10 +15,7 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
+            loader: 'babel-loader'
           }
         ],
         exclude: /node_modules/,
@@ -47,12 +44,20 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CopyPlugin([
-      {from: './src/assets', to: './assets' }
-    ]),
+    // new CopyPlugin(
+    //   [
+    //     {
+    //       context: "src/assets/",
+    //       from: "**/*",
+    //       to: path.resolve(__dirname, "dist")
+    //     }
+    //   ],
+    //   { copyUnmodified: true }
+    // ),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html'
-    })
+    }),
+    new WriteFilePlugin()
   ],
 };
