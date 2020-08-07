@@ -8,7 +8,9 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --watch"
   },
-  "repository": {"url": "git@github.com:kawaguchi1102/javascript-start-base.git"},
+  "repository": {
+    "url": "git@github.com:kawaguchi1102/javascript-start-base.git"
+  },
   "keywords": [],
   "author": "kawaguchi",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "write-file-webpack-plugin": "^4.5.1"
   }
 }

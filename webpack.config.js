@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require("write-file-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -44,16 +45,14 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    // new CopyPlugin(
-    //   [
-    //     {
-    //       context: "src/assets/",
-    //       from: "**/*",
-    //       to: path.resolve(__dirname, "dist")
-    //     }
-    //   ],
-    //   { copyUnmodified: true }
-    // ),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/assets",
+          to: path.resolve(__dirname, "dist/assets")
+        }
+      ]
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html'
