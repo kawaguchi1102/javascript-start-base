@@ -1,4 +1,6 @@
 const path = require('path');
+const Fiber = require('fibers');
+const Sass = require('sass');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require("write-file-webpack-plugin");
@@ -24,10 +26,24 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-          "postcss-loader",
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: Sass,
+              sassOptions: {
+                fiber: Fiber
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          }
         ]
       },
       {
