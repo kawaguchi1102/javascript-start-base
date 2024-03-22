@@ -33,7 +33,7 @@
     "url-loader": "^4.1.1",
     "webpack": "4.44.2",
     "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^5.0.4",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "dependencies": {
